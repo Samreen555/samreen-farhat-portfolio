@@ -1,4 +1,4 @@
-/* Simple Basic CSS for Portfolio */
+/* Simple Basic CSS for Portfolio - FULLY RESPONSIVE */
 
 /* 1. Base Styles */
 :root {
@@ -21,16 +21,30 @@ body {
     line-height: 1.6;
     color: var(--dark-color);
     background-color: var(--light-color);
+    overflow-x: hidden;
+    width: 100%;
 }
 
-/* 2. Typography */
+/* 2. Typography - Responsive Font Sizes */
 h1, h2, h3, h4 {
     font-family: 'Raleway', sans-serif;
     font-weight: 600;
 }
 
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+}
+
 .section-title {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 5vw, 2rem);
     text-align: center;
     margin-bottom: 40px;
 }
@@ -52,14 +66,14 @@ section {
     padding: 60px 0;
 }
 
-/* 5. Navigation */
+/* 5. Navigation - Mobile First */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 15px 0;
+    padding: 12px 0;
     z-index: 1000;
 }
 
@@ -67,10 +81,11 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--dark-color);
     text-decoration: none;
@@ -82,28 +97,34 @@ section {
 
 .nav-links {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
 }
 
 .nav-links a {
     color: var(--dark-color);
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--primary-color);
 }
 
-/* 6. Buttons */
+/* 6. Buttons - Mobile Friendly */
 .btn {
     display: inline-block;
-    padding: 10px 25px;
+    padding: 12px 24px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 500;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
 .btn-primary {
@@ -113,6 +134,7 @@ section {
 
 .btn-primary:hover {
     background: #5a52d9;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -124,17 +146,23 @@ section {
 .btn-secondary:hover {
     background: var(--primary-color);
     color: white;
+    transform: translateY(-2px);
 }
 
-/* 7. Hero Section */
+/* 7. Hero Section - Mobile Optimized */
 .hero {
-    padding-top: 120px;
+    padding-top: 100px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero .container {
     display: flex;
     align-items: center;
     gap: 40px;
+    flex-direction: column;
+    text-align: center;
 }
 
 .hero-content {
@@ -142,12 +170,11 @@ section {
 }
 
 .hero h1 {
-    font-size: 2.5rem;
     margin-bottom: 15px;
 }
 
 .hero h2 {
-    font-size: 1.3rem;
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
     color: var(--gray-color);
     margin-bottom: 20px;
 }
@@ -155,11 +182,14 @@ section {
 .hero p {
     margin-bottom: 30px;
     color: var(--gray-color);
+    font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
 .hero-buttons {
     display: flex;
     gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .hero-image {
@@ -168,8 +198,8 @@ section {
 }
 
 .image-placeholder {
-    width: 300px;
-    height: 300px;
+    width: clamp(200px, 50vw, 300px);
+    height: clamp(200px, 50vw, 300px);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 50%;
     display: flex;
@@ -179,14 +209,22 @@ section {
 }
 
 .image-placeholder i {
-    font-size: 5rem;
+    font-size: clamp(3rem, 10vw, 5rem);
     color: white;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* 8. About Section */
 .about-content {
     display: flex;
     gap: 40px;
+    flex-direction: column;
 }
 
 .about-text, .about-skills {
@@ -194,7 +232,7 @@ section {
 }
 
 .about-text h3, .about-skills h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
     margin-bottom: 20px;
 }
 
@@ -206,11 +244,33 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    word-break: break-word;
 }
 
 .info-item i {
     color: var(--primary-color);
+    min-width: 20px;
+}
+
+.info-item a {
+    color: var(--dark-color);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.info-item a:hover {
+    color: var(--primary-color);
+}
+
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category h4 {
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .skill-tags {
@@ -221,16 +281,23 @@ section {
 
 .skill-tag {
     background: var(--light-gray);
-    padding: 8px 15px;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
 }
 
 /* 9. Cards */
 .expertise-grid, .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 25px;
 }
 
 .expertise-card, .project-card {
@@ -238,11 +305,11 @@ section {
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .expertise-card:hover, .project-card:hover {
     transform: translateY(-5px);
-    transition: transform 0.3s ease;
 }
 
 .expertise-icon {
@@ -276,6 +343,33 @@ section {
     font-size: 3rem;
 }
 
+.project-tech {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 8px 0 12px;
+    font-size: 0.85rem;
+}
+
+.project-desc {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.project-features span {
+    background: var(--light-gray);
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
 /* 10. Timeline */
 .timeline {
     margin-bottom: 40px;
@@ -294,6 +388,19 @@ section {
     color: var(--primary-color);
     font-weight: 600;
     margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    font-size: 0.95rem;
+    color: var(--gray-color);
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 
 /* 11. Education */
@@ -305,21 +412,27 @@ section {
     margin-bottom: 20px;
 }
 
+.education-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
 .institution {
     color: var(--primary-color);
     font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .date {
     color: var(--gray-color);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* 12. Certificates */
 .certificates-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 25px;
 }
 
 .certificate-card {
@@ -327,42 +440,97 @@ section {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
 }
 
 .certificate-header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     margin-bottom: 15px;
+    flex-wrap: wrap;
 }
 
 .certificate-header i {
     color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.certificate-header h3 {
+    font-size: 1.1rem;
+}
+
+.certificate-issuer {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.certificate-date {
+    color: var(--gray-color);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.certificate-desc {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+}
+
+.certificate-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.certificate-link:hover {
+    text-decoration: underline;
 }
 
 /* 13. Interests */
 .interests-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
 }
 
 .interest-tag {
     background: white;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 8px 16px;
+    border-radius: 25px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.interest-tag:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
 }
 
 /* 14. Contact */
 .contact-content {
     display: flex;
     gap: 40px;
+    flex-direction: column;
 }
 
 .contact-info, .contact-form {
     flex: 1;
+}
+
+.contact-info h3 {
+    margin-bottom: 15px;
 }
 
 .contact-item {
@@ -370,11 +538,24 @@ section {
     align-items: flex-start;
     gap: 15px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .contact-item i {
     color: var(--primary-color);
-    margin-top: 5px;
+    font-size: 1.2rem;
+    min-width: 25px;
+}
+
+.contact-item div h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+}
+
+.contact-item div p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    word-break: break-word;
 }
 
 .form-group {
@@ -386,8 +567,10 @@ section {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--light-gray);
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
@@ -396,66 +579,33 @@ section {
     border-color: var(--primary-color);
 }
 
-/* 15. Footer */
-.footer {
-    background: var(--dark-color);
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-}
-/* Section heading styles - move inline styles here */
-.section-heading {
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.ai-heading {
-    margin: 40px 0 20px;
-    color: var(--primary-color);
-}
-
-/* Social links container */
-.social-links-container {
+/* Social Links */
+.social-links {
     display: flex;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
 }
 
-/* Social link with text for accessibility */
-.social-link-text {
+.social-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
     background: var(--light-gray);
-    border-radius: 25px;
-    color: var(--dark-color);
+    border-radius: 50%;
+    color: var(--primary-color);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.social-link-text:hover {
+.social-link:hover {
     background: var(--primary-color);
     color: white;
+    transform: translateY(-3px);
 }
 
-.social-link-text i {
-    font-size: 1rem;
-}
-
-/* GitHub button specific */
 .github-btn {
     background: #24292e;
     color: white;
@@ -465,79 +615,240 @@ section {
     background: #0366d6;
 }
 
-/* Contact social section */
-.contact-social {
-    margin-top: 20px;
+/* 15. Footer */
+.footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* 16. Responsive Design */
-@media (max-width: 768px) {
+.footer p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* 16. Responsive Breakpoints */
+
+/* Tablet Landscape (768px and up) */
+@media (min-width: 768px) {
     .hero .container {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
     }
     
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero h2 {
-        font-size: 1.2rem;
+    .hero-buttons {
+        justify-content: flex-start;
     }
     
     .about-content {
-        flex-direction: column;
+        flex-direction: row;
     }
     
     .contact-content {
-        flex-direction: column;
+        flex-direction: row;
     }
     
     .expertise-grid,
     .projects-grid,
     .certificates-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .navbar .container {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
     }
     
     .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
     }
 }
 
-@media (max-width: 576px) {
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+    .expertise-grid,
+    .projects-grid,
+    .certificates-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .container {
+        padding: 0 30px;
+    }
+    
+    section {
+        padding: 80px 0;
+    }
+}
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+/* Mobile Small (up to 480px) */
+@media (max-width: 480px) {
     .hero {
-        padding-top: 150px;
-    }
-    
-    .image-placeholder {
-        width: 250px;
-        height: 250px;
-    }
-    
-    .image-placeholder i {
-        font-size: 4rem;
+        padding-top: 130px;
     }
     
     .section-title {
-        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    section {
+        padding: 40px 0;
     }
     
     .hero-buttons {
         flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links {
+        gap: 5px;
+    }
+    
+    .nav-links a {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .expertise-card, 
+    .project-card, 
+    .certificate-card,
+    .timeline-item,
+    .education-item {
+        padding: 15px;
+    }
+    
+    .skill-tag {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .interest-tag {
+        padding: 6px 12px;
+        font-size: 0.75rem;
     }
     
     .footer-links {
         flex-direction: column;
+        gap: 10px;
+    }
+    
+    .contact-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Touch-friendly improvements for mobile */
+@media (max-width: 768px) {
+    .btn,
+    .nav-links a,
+    .skill-tag,
+    .interest-tag,
+    .social-link,
+    .certificate-link {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .btn:active,
+    .nav-links a:active,
+    .skill-tag:active {
+        opacity: 0.7;
+        transform: scale(0.98);
+    }
+    
+    input,
+    textarea,
+    button {
+        font-size: 16px !important; /* Prevents zoom on iOS */
     }
 }
 
 /* 17. Smooth Scroll */
 html {
     scroll-behavior: smooth;
+}
+
+/* 18. Accessibility - Focus States */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* 19. Loading Animation for Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 20. Print Styles */
+@media print {
+    .navbar,
+    .hero-buttons,
+    .contact-form,
+    .footer-links,
+    .social-links {
+        display: none;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .container {
+        padding: 0;
+        margin: 0;
+    }
+    
+    section {
+        padding: 20px 0;
+        page-break-inside: avoid;
+    }
 }
