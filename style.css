@@ -4,25 +4,22 @@
 
 /* 1. Base Styles */
 :root {
-    --primary-color: #0047AB; 
-    --primary-dark: #003380;  
-    --secondary-color: #1A1A1A; 
-    --dark-color: #000000;    
-    --light-color: #FFFFFF;   
-    --gray-color: #555555;    
-    --light-gray: #F4F4F4;    
-    --white: #ffffff;
+    --primary-color: #2563EB;       
+    --primary-dark: #1D4ED8;         
+    --secondary-color: #06B6D4;      
+    --dark-color: #1E1E24;           
+    --light-color: #E2E8F0;         
+    --gray-color: #94A3B8;           
+    --light-gray: #2A2A32;           
+    --white: #FFFFFF;
     
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
-    --shadow-primary: 0 10px 30px rgba(0, 71, 171, 0.3); 
-    --transition-fast: 0.3s ease;
-    --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --shadow-primary: 0 10px 30px rgba(37, 99, 235, 0.3);
     
-    /* Gradients updated to blend Cobalt Blue and Black */
-    --gradient-primary: linear-gradient(135deg, #0047AB 0%, #1A1A1A 100%);
-    --gradient-hover: linear-gradient(135deg, #003380 0%, #000000 100%);
+    --gradient-primary: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+    --gradient-hover: linear-gradient(135deg, #1D4ED8 0%, #0891B2 100%);
 }
 
 * {
