@@ -1,3 +1,24 @@
+function sendEmail() {
+    // Get the values from the input fields
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var subject = document.getElementById("subject").value;
+    var message = document.getElementById("message").value;
+
+    // Basic validation
+    if (!name || !email || !subject || !message) {
+        alert("Please fill in all fields before sending.");
+        return;
+    }
+
+    // Create the mailto link
+    var mailtoLink = "mailto:samreen.farhat.se.bahria@gmail.com" +
+                     "?subject=" + encodeURIComponent(subject + " - from " + name) +
+                     "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
+
+    window.location.href = mailtoLink;
+}
+
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
