@@ -4,22 +4,26 @@
 
 /* 1. Base Styles */
 :root {
-    --primary-color: #2563EB;       
-    --primary-dark: #1D4ED8;         
-    --secondary-color: #06B6D4;      
-    --dark-color: #1E1E24;           
-    --light-color: #0d0e0f;         
-    --gray-color: #a0bade;           
-    --light-gray: #2A2A32;           
-    --white: #FFFFFF;
+    /* Original Color Palette */
+    --primary-color: #6c63ff;
+    --primary-dark: #5a52d9;
+    --secondary-color: #ff6584;
+    --dark-color: #1a1a2e;
+    --light-color: #f8f9fa;
+    --gray-color: #666;
+    --light-gray: #eee;
+    --white: #ffffff;
     
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
-    --shadow-primary: 0 10px 30px rgba(37, 99, 235, 0.3);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+    --shadow-primary: 0 10px 30px rgba(108, 99, 255, 0.3);
     
-    --gradient-primary: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
-    --gradient-hover: linear-gradient(135deg, #1D4ED8 0%, #0891B2 100%);
+    --transition-fast: 0.3s ease;
+    --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --gradient-primary: linear-gradient(135deg, #6c63ff 0%, #ff6584 100%);
+    --gradient-hover: linear-gradient(135deg, #5a52d9 0%, #e65578 100%);
 }
 
 * {
